@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;700;800&display=swap");
+
+:root {
+  /* for light mode */
+  --light-mode-backgrond: hsl(0, 0%, 98%);
+  --light-mode-text: hsl(200, 15%, 8%);
+  --light-mode-input: hsl(0, 0%, 52%);
+  --light-mode-elements: white;
+
+  /* for dark mode */
+  --dark-mode-backgrond: hsl(207, 26%, 17%);
+  --dark-mode-text: white;
+  --dark-mode-input: hsl(209, 23%, 22%);
+  --dark-mode-elements: hsl(209, 23%, 22%);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: var(--light-mode-backgrond);
+  color: var(--light-mode-text);
+}
+
+.container {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+/* navbar */
+.navbar {
+  background-color: var(--light-mode-elements);
+}
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.034);
+}
+
+.theme-switcher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+.sun {
+  width: 30px;
+}
+.nav-heading {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.navbar p {
+  font-weight: bold;
+}
+
+/* end of navbar */
+
+/* main section  */
+.main {
+  /* background-color: var(--light-mode-backgrond); */
+  /* background-color: red; */
+  padding: 2rem 0;
+}
+
+/* main sections input */
+.input-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.search-input-con {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-input {
+  padding: 1rem 3rem;
+  width: 100%;
+  outline: none;
+  border: none;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.164);
+  font-size: 1.2rem;
+}
+.search-input::placeholder {
+  position: absolute;
+  top: 50%;
+  left: 3rem;
+  transform: translateY(-50%);
+  text-transform: capitalize;
+  color: var(--light-mode-input);
+}
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  padding: 1rem;
+}
+
+/* main section drop down */
+.filter-dropdown-con {
+  text-align: center;
+}
+.filter-head {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 3rem;
+  width: 250px;
+  gap: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.164);
+}
+.option {
+  padding: 0.3rem;
+  cursor: pointer;
+}
+.option:hover {
+  background-color: rgb(243, 243, 243);
+}
+.filter-options {
+  background-color: white;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.164);
+  padding: 1rem 0;
+  position: absolute;
+  width: 250px;
+  height: 0;
+  opacity: 0;
+  transform: 1s ease;
+  margin-top: 0.5rem;
+}
+.show {
+  height: 180px;
+  opacity: 1;
+  transition: 0.3s;
+}
+/* end of main section */
+
+/* elements style */
+.countries-container {
+  margin-top: 2rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+.country {
+  background-color: var(--light-mode-elements);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.164);
+  width: 240px;
+  justify-self: center;
+  align-self: center;
+  margin-bottom: 3rem;
+  cursor: pointer;
+}
+.country-data {
+  padding: 0 1rem;
+}
+.country-population,
+.country-name,
+.country-region,
+.country-capital {
+  margin: 1rem 0;
+  font-weight: 500;
+}
+.population,
+.region,
+.capital {
+  font-weight: 300;
+}
+.country-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.country-flag {
+  width: 100%;
+  height: 8rem;
+  object-fit: cover;
+}
+
+/* more detail page */
+.country-data-con {
+  display: flex;
+  gap: 2rem;
+  margin-top: 5rem;
+}
+.img-part {
+  flex: 1;
+}
+.img-part img {
+  width: 500px;
+  max-width: 100%;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.719);
+}
+.country-info {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.country-name-2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.country-info .option:hover {
+  background-color: initial;
+  cursor: initial;
+}
+.back-btn {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.164);
+  width: max-content;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
